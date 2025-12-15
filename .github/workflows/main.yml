@@ -1,0 +1,38 @@
+name: Deploy with SSH Tunnel
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # 1. Устанавливаем SSH-агент и добавляем ключ
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+            ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      # 2. Поднимаем туннель
+      # Команда пробрасывает порт 5432 удаленного сервера на порт 5432 внутри раннера GitHub
+      - name: Create SSH Tunnel
+        run: |
+          ssh -o StrictHostKeyChecking=no -f -N -L 5432:127.0.0.1:5432 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          echo "Tunnel established on port 5432"
+
+      # 3. Теперь можно запускать ваши скрипты
+      # Они будут думать, что база находится локально на 127.0.0.1:5432
+      - name: Run Database Scripts
+        env:
+          # Обратите внимание: хост теперь localhost (из секрета DB_HOST)
+          PGHOST: ${{ secrets.DB_HOST }}
+          PGPORT: ${{ secrets.DB_PORT }}
+          PGUSER: ${{ secrets.DB_USER }}
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+           # Пример проверки подключения
+           psql -c "SELECT version();"
+           
+           # Или запуск вашего Python скрипта
+           # python runner.py ...
