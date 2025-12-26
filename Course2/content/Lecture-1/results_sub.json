@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sub-045",
+    "status": "Time Limit Exceeded",
+    "date": "2025-11-02 14:15",
+    "compiler": "GCC 11.2",
+    "code": "#include <stdio.h>\n// Linear search implementation O(N*K)\nint main() { ... }",
+    "testNumber": "15",
+    "timeMs": "2050",
+    "memoryMb": "4"
+  },
+  {
+    "id": "sub-046",
+    "status": "ACCEPTED!",
+    "date": "2025-11-02 14:40",
+    "compiler": "Clang 14.0",
+    "code": "#include <stdio.h>\n// Binary search implementation O(K log N)\nint main() { ... }",
+    "testNumber": "30",
+    "timeMs": "120",
+    "memoryMb": "5"
+  },
+  {
+    "id": "sub-047",
+    "status": "Runtime Error",
+    "date": "2025-11-02 15:00",
+    "compiler": "GCC 11.2",
+    "code": "#include <stdio.h>\nint main() { int arr[1000000]; ... }",
+    "testNumber": "1",
+    "timeMs": "0",
+    "memoryMb": "0"
+  }
+]
