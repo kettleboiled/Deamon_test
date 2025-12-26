@@ -1,55 +1,41 @@
 {
-  "title": "Algorithms & Data Structures",
-  "description": "Advanced C course covering recursion, dynamic memory, sorting algorithms, and complexity analysis.",
+  "title": "Алгоритмы и Структуры Данных (C)",
+  "description": "Базовый курс: рекурсия, синтаксис C, сортировки и алгоритмы поиска.",
   "modules": [
     {
-      "title": "Recursion & Dynamic Structs",
+      "title": "Лекция 1: Рекурсия и Основы C",
       "content": [
         {
           "type": "submodule",
-          "title": "Recursion Basics",
-          "contentUrl": "content/Module-1/chapter_1_recursion.md"
+          "title": "Глава 1: Рекурсия",
+          "contentUrl": "content/Lecture-1/topic1.md"
         },
         {
           "type": "submodule",
-          "title": "Linked Lists",
-          "contentUrl": "content/Module-1/chapter_2_lists.md"
+          "title": "Глава 2: Основы синтаксиса C",
+          "contentUrl": "content/Lecture-1/topic2.md"
         },
         {
           "type": "task",
-          "title": "Binary Search",
-          "contentUrl": "content/Module-1/task_binary_search.md",
-          "submissionsUrl": "content/Module-1/submissions_binary.json",
-          "difficulty": "easy"
-        },
-        {
-          "type": "task",
-          "title": "Stack Implementation",
-          "contentUrl": "content/Module-1/task_stack.md",
-          "submissionsUrl": "content/Module-1/submissions_stack.json",
+          "title": "Задача 1. Эффективный поиск",
+          "contentUrl": "content/Lecture-1/task1.md",
+          "submissionsUrl": "content/Lecture-1/results_sub.json",
           "difficulty": "medium"
-        },
-        {
-          "type": "task",
-          "title": "Queue Implementation",
-          "contentUrl": "content/Module-1/task_queue.md",
-          "submissionsUrl": "content/Module-1/submissions_queue.json",
-          "difficulty": "hard"
         }
       ]
     },
     {
-      "title": "Sorting & Analysis",
+      "title": "Лекция 2: Сортировки и Поиск",
       "content": [
         {
           "type": "submodule",
-          "title": "Sorting Algorithms",
-          "contentUrl": "content/Module-2/chapter_3_sorting.md"
+          "title": "Глава 3: Теория сортировок",
+          "contentUrl": "content/Lecture-2/topic3.md"
         },
         {
           "type": "submodule",
-          "title": "Complexity Analysis",
-          "contentUrl": "content/Module-2/chapter_4_complexity.md"
+          "title": "Глава 4: Поиск и Хеширование",
+          "contentUrl": "content/Lecture-2/topic4.md"
         }
       ]
     }
